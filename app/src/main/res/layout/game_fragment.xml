@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".GameFragment">
+
+    <TextView
+        android:id="@+id/resultTextId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:letterSpacing=".1"
+        android:textSize="36sp"
+        tools:text="*****" />
+
+    <TextView
+        android:id="@+id/textIDForLiveLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        tools:text="*****" />
+
+    <TextView
+        android:id="@+id/textIDForIncorrectGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        tools:text="*****" />
+
+    <EditText
+        android:id="@+id/idForInputArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/guess_a_letter"
+        android:maxLength="1"
+        android:minHeight="48dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/guessButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/guess" />
+
+    <TextView
+        android:id="@+id/hintTextId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        tools:text="hint for the secret word" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/resetFABid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@android:drawable/ic_menu_rotate"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+</LinearLayout>

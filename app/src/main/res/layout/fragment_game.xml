@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".GameFragment">
+
+    <data>
+
+        <variable
+            name="gameFragmentViewModelDataBindingVariable"
+            type="com.example.worgess.GameFragmentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/resultTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:letterSpacing=".1"
+            android:text="@{gameFragmentViewModelDataBindingVariable.secretWordDisplay}"
+            android:textSize="36sp"
+            tools:text="*****" />
+
+        <TextView
+            android:id="@+id/textIDForLiveLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/lives_left(gameFragmentViewModelDataBindingVariable.livesLeft)}"
+            android:textSize="16sp"
+            tools:text="*****" />
+
+        <TextView
+            android:id="@+id/textIDForIncorrectGuess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/incorrect_guesses(gameFragmentViewModelDataBindingVariable.incorrectGuesses)}"
+            android:textSize="16sp"
+            tools:text="*****" />
+
+        <EditText
+            android:id="@+id/idForInputArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/guess_a_letter"
+            android:maxLength="1"
+            android:minHeight="48dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/guessButt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/guess" />
+
+        <Button
+            android:id="@+id/finishGameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{()->gameFragmentViewModelDataBindingVariable.finishGame()}"
+            android:text="@string/finish_game" />
+
+        <TextView
+            android:id="@+id/hintTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:text="@{@string/hint_text(gameFragmentViewModelDataBindingVariable.hint)}"
+            tools:text="hint for the secret word" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/resetFABid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:contentDescription="@string/resets_for_a_new_game"
+            android:padding="16dp"
+            android:src="@android:drawable/ic_menu_rotate"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <androidx.compose.ui.platform.ComposeView
+            android:id = "@+id/composeViewGameF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</layout>
